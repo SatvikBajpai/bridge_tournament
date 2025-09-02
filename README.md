@@ -4,48 +4,66 @@ A live, synchronized bridge tournament management system using GitHub as a datab
 
 ## Features
 
+- **Read-Only Website**: Clean, live display for all viewers
+- **Separate Admin Panel**: Full control from your local system
 - **Real-time Synchronization**: All users see the same live data
-- **Admin Control**: Secure admin system for managing tournament data
 - **Round Robin Tournament**: Pre-configured 6-team tournament schedule
 - **Live Updates**: Data automatically refreshes every 10 seconds
 - **Mobile Responsive**: Works on all devices
 
 ## How to Use
 
-### For Viewers (Everyone)
-1. Visit the website at: `https://satvikbajpai.github.io/bridge_tournament/`
-2. View live tournament data including:
-   - Team information and player names
-   - Match schedule and scores
-   - Current standings
-   - Tournament rules
+### For Viewers (Tournament Participants)
+Visit the website at: `https://satvikbajpai.github.io/bridge_tournament/`
 
-### For Admins (Tournament Organizers)
-1. Click "Admin Login" in the top-right corner
-2. Enter your GitHub Personal Access Token
-3. Now you can:
-   - Edit player names
+The website automatically displays:
+- Team information and player names
+- Live match schedule and scores
+- Current standings
+- Tournament rules
+
+**No editing capabilities** - everything is controlled from the admin panel.
+
+### For Tournament Organizers (Admin)
+1. **Download the repository** to your local computer
+2. **Open `admin-panel.html`** in your web browser
+3. **Enter your GitHub Personal Access Token** to connect
+4. **Control everything** from the admin panel:
+   - Edit all player names
    - Update match scores
-   - All changes sync live to all viewers
+   - Reset matches if needed
+   - View live standings
 
 ## GitHub Personal Access Token Setup
 
-To get admin access, you need a GitHub Personal Access Token:
+To use the admin panel, you need a GitHub Personal Access Token:
 
 1. Go to GitHub Settings → Developer settings → Personal access tokens → Tokens (classic)
 2. Generate a new token with `repo` scope
-3. Use this token to login as admin on the website
+3. Copy the token and use it in the admin panel
 
 ### Required Token Permissions:
 - `repo` (Full control of private repositories)
 
-## Technical Details
+## System Architecture
 
-- **Database**: Uses GitHub repository as database via GitHub API
-- **Storage**: Tournament data stored in `data/tournament-data.json`
-- **Sync**: 10-second polling for live updates
-- **Fallback**: Local storage backup if GitHub API fails
-- **Security**: Read access for everyone, write access only for authenticated admins
+### Public Website (`index.html`)
+- **Read-only display** for all users
+- **No input fields** or editing capabilities
+- **Auto-refreshes** every 10 seconds
+- **Mobile responsive** design
+
+### Admin Control Panel (`admin-panel.html`)
+- **Complete tournament management**
+- **Secure token-based authentication**
+- **Real-time data synchronization**
+- **Bulk operations** (save all teams, reset all matches)
+
+### Database
+- **GitHub repository** as database via GitHub API
+- **Data stored** in `data/tournament-data.json`
+- **Automatic version control** and backup
+- **Live synchronization** between admin and viewers
 
 ## Tournament Format
 
@@ -56,23 +74,36 @@ To get admin access, you need a GitHub Personal Access Token:
 
 ## Files
 
-- `index.html` - Main website page
-- `styles.css` - Styling and responsive design
+### Public Website
+- `index.html` - Read-only tournament display
+- `styles.css` - Website styling and responsive design
+- `script-readonly.js` - View-only functionality with live updates
+
+### Admin Panel
+- `admin-panel.html` - Complete tournament management interface
+- `admin-styles.css` - Admin panel styling
+- `admin-panel.js` - Full admin functionality
+
+### Shared
 - `database.js` - GitHub API integration
-- `script-github.js` - Main application logic with GitHub sync
 - `data/tournament-data.json` - Tournament data storage
-- `script.js` - Original local-only version (backup)
 
-## Development
-
-To run locally:
-1. Clone the repository
-2. Open `index.html` in a web browser
-3. For admin features, you'll need a GitHub token
+### Legacy Files (for reference)
+- `script-github.js` - Previous version with editing capabilities
+- `script.js` - Original local-only version
 
 ## Deployment
 
-The website is automatically deployed via GitHub Pages at:
+The public website is automatically deployed via GitHub Pages at:
 `https://satvikbajpai.github.io/bridge_tournament/`
 
-Any changes pushed to the `main` branch will automatically update the live website.
+Any changes you make through the admin panel instantly update the live website for all viewers.
+
+## Local Setup for Admins
+
+1. Clone or download the repository
+2. Open `admin-panel.html` in any modern web browser
+3. Enter your GitHub token to connect
+4. Start managing the tournament!
+
+The admin panel works entirely in the browser - no server setup required.

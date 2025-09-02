@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bridge Tournament Admin Panel</title>
+    <link rel="stylesheet" href="admin-styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header class="admin-header">
+        <div class="header-content">
+            <h1><i class="fas fa-cogs"></i> Tournament Admin Panel</h1>
+            <div class="auth-section">
+                <input type="password" id="github-token" placeholder="Enter GitHub Token" class="token-input">
+                <button id="connect-btn" class="connect-btn">Connect</button>
+                <button id="disconnect-btn" class="disconnect-btn" style="display: none;">Disconnect</button>
+                <span id="connection-status" class="status-indicator">Disconnected</span>
+            </div>
+        </div>
+    </header>
+
+    <div id="loading-screen" class="loading-screen">
+        <div class="loading-content">
+            <div class="spinner"></div>
+            <p>Loading tournament data...</p>
+        </div>
+    </div>
+
+    <main id="admin-content" class="admin-content" style="display: none;">
+        <div class="control-tabs">
+            <button class="tab-btn active" data-tab="teams">
+                <i class="fas fa-users"></i> Teams & Players
+            </button>
+            <button class="tab-btn" data-tab="matches">
+                <i class="fas fa-gamepad"></i> Match Results
+            </button>
+            <button class="tab-btn" data-tab="standings">
+                <i class="fas fa-trophy"></i> Current Standings
+            </button>
+        </div>
+
+        <!-- Teams Management -->
+        <section id="teams-tab" class="tab-panel active">
+            <h2>Team Management</h2>
+            <div class="teams-admin-grid">
+                <div class="team-admin-card" data-team="1">
+                    <div class="team-header">
+                        <div class="team-avatar">🃏</div>
+                        <h3>Team Aces</h3>
+                    </div>
+                    <div class="player-inputs">
+                        <div class="input-group">
+                            <label>Player 1:</label>
+                            <input type="text" class="player-input" data-player="0" placeholder="Enter player name">
+                        </div>
+                        <div class="input-group">
+                            <label>Player 2:</label>
+                            <input type="text" class="player-input" data-player="1" placeholder="Enter player name">
+                        </div>
+                    </div>
+                    <button class="save-team-btn">Save Team</button>
+                </div>
+
+                <div class="team-admin-card" data-team="2">
+                    <div class="team-header">
+                        <div class="team-avatar">♠️</div>
+                        <h3>Team Spades</h3>
+                    </div>
+                    <div class="player-inputs">
+                        <div class="input-group">
+                            <label>Player 1:</label>
+                            <input type="text" class="player-input" data-player="0" placeholder="Enter player name">
+                        </div>
+                        <div class="input-group">
+                            <label>Player 2:</label>
+                            <input type="text" class="player-input" data-player="1" placeholder="Enter player name">
+                        </div>
+                    </div>
+                    <button class="save-team-btn">Save Team</button>
+                </div>
+
+                <div class="team-admin-card" data-team="3">
+                    <div class="team-header">
+                        <div class="team-avatar">♥️</div>
+                        <h3>Team Hearts</h3>
+                    </div>
+                    <div class="player-inputs">
+                        <div class="input-group">
+                            <label>Player 1:</label>
+                            <input type="text" class="player-input" data-player="0" placeholder="Enter player name">
+                        </div>
+                        <div class="input-group">
+                            <label>Player 2:</label>
+                            <input type="text" class="player-input" data-player="1" placeholder="Enter player name">
+                        </div>
+                    </div>
+                    <button class="save-team-btn">Save Team</button>
+                </div>
+
+                <div class="team-admin-card" data-team="4">
+                    <div class="team-header">
+                        <div class="team-avatar">♦️</div>
+                        <h3>Team Diamonds</h3>
+                    </div>
+                    <div class="player-inputs">
+                        <div class="input-group">
+                            <label>Player 1:</label>
+                            <input type="text" class="player-input" data-player="0" placeholder="Enter player name">
+                        </div>
+                        <div class="input-group">
+                            <label>Player 2:</label>
+                            <input type="text" class="player-input" data-player="1" placeholder="Enter player name">
+                        </div>
+                    </div>
+                    <button class="save-team-btn">Save Team</button>
+                </div>
+
+                <div class="team-admin-card" data-team="5">
+                    <div class="team-header">
+                        <div class="team-avatar">♣️</div>
+                        <h3>Team Clubs</h3>
+                    </div>
+                    <div class="player-inputs">
+                        <div class="input-group">
+                            <label>Player 1:</label>
+                            <input type="text" class="player-input" data-player="0" placeholder="Enter player name">
+                        </div>
+                        <div class="input-group">
+                            <label>Player 2:</label>
+                            <input type="text" class="player-input" data-player="1" placeholder="Enter player name">
+                        </div>
+                    </div>
+                    <button class="save-team-btn">Save Team</button>
+                </div>
+
+                <div class="team-admin-card" data-team="6">
+                    <div class="team-header">
+                        <div class="team-avatar">🎭</div>
+                        <h3>Team Jokers</h3>
+                    </div>
+                    <div class="player-inputs">
+                        <div class="input-group">
+                            <label>Player 1:</label>
+                            <input type="text" class="player-input" data-player="0" placeholder="Enter player name">
+                        </div>
+                        <div class="input-group">
+                            <label>Player 2:</label>
+                            <input type="text" class="player-input" data-player="1" placeholder="Enter player name">
+                        </div>
+                    </div>
+                    <button class="save-team-btn">Save Team</button>
+                </div>
+            </div>
+            
+            <div class="bulk-actions">
+                <button id="save-all-teams" class="bulk-btn primary">
+                    <i class="fas fa-save"></i> Save All Teams
+                </button>
+            </div>
+        </section>
+
+        <!-- Match Results Management -->
+        <section id="matches-tab" class="tab-panel">
+            <h2>Match Results</h2>
+            <div id="matches-container" class="matches-container">
+                <!-- Matches will be dynamically generated -->
+            </div>
+            
+            <div class="bulk-actions">
+                <button id="save-all-matches" class="bulk-btn primary">
+                    <i class="fas fa-save"></i> Save All Match Results
+                </button>
+                <button id="reset-all-matches" class="bulk-btn danger">
+                    <i class="fas fa-undo"></i> Reset All Matches
+                </button>
+            </div>
+        </section>
+
+        <!-- Standings View -->
+        <section id="standings-tab" class="tab-panel">
+            <h2>Current Standings</h2>
+            <div class="standings-preview">
+                <table class="standings-table">
+                    <thead>
+                        <tr>
+                            <th>Rank</th>
+                            <th>Team</th>
+                            <th>Wins</th>
+                            <th>Losses</th>
+                            <th>Points</th>
+                        </tr>
+                    </thead>
+                    <tbody id="standings-body">
+                        <!-- Standings will be dynamically updated -->
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="bulk-actions">
+                <button id="refresh-standings" class="bulk-btn">
+                    <i class="fas fa-refresh"></i> Refresh Standings
+                </button>
+            </div>
+        </section>
+    </main>
+
+    <div id="notification-area" class="notification-area"></div>
+
+    <script src="database.js"></script>
+    <script src="admin-panel.js"></script>
+</body>
+</html>
