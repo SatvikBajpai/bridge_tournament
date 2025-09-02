@@ -3,7 +3,7 @@
     {
       "id": 1,
       "name": "Team Aces",
-      "players": ["", ""],
+      "players": ["A1", "A2"],
       "wins": 0,
       "losses": 0,
       "points": 0
@@ -11,7 +11,7 @@
     {
       "id": 2,
       "name": "Team Spades",
-      "players": ["", ""],
+      "players": ["S1", "S2"],
       "wins": 0,
       "losses": 0,
       "points": 0
@@ -19,7 +19,7 @@
     {
       "id": 3,
       "name": "Team Hearts",
-      "players": ["", ""],
+      "players": ["H1", "H2"],
       "wins": 0,
       "losses": 0,
       "points": 0
@@ -27,7 +27,7 @@
     {
       "id": 4,
       "name": "Team Diamonds",
-      "players": ["", ""],
+      "players": ["D1", "D2"],
       "wins": 0,
       "losses": 0,
       "points": 0
@@ -35,7 +35,7 @@
     {
       "id": 5,
       "name": "Team Clubs",
-      "players": ["", ""],
+      "players": ["C1", "C2"],
       "wins": 0,
       "losses": 0,
       "points": 0
@@ -43,12 +43,12 @@
     {
       "id": 6,
       "name": "Team Jokers",
-      "players": ["", ""],
+      "players": ["J1", "J2"],
       "wins": 0,
       "losses": 0,
       "points": 0
     }
   ],
   "matches": [],
-  "lastUpdated": "2024-01-01T00:00:00.000Z"
+  "lastUpdated": "2025-01-02T00:00:00.000Z"
 }
