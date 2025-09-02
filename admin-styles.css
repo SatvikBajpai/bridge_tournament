@@ -279,6 +279,197 @@ body {
     transform: none;
 }
 
+/* Bracket Management */
+.admin-bracket-round {
+    margin-bottom: 2rem;
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 1.5rem;
+    border: 2px solid #e9ecef;
+}
+
+.admin-bracket-round.final-round {
+    background: linear-gradient(135deg, #ffd700, #ffed4a);
+    border: 3px solid #2a5298;
+    box-shadow: 0 8px 25px rgba(42, 82, 152, 0.3);
+}
+
+.admin-bracket-round h3 {
+    color: #2a5298;
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.final-round h3 {
+    color: #1e3c72;
+    font-size: 1.5rem;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+
+.admin-bracket-matches {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 1.5rem;
+}
+
+.admin-bracket-match {
+    background: white;
+    border-radius: 10px;
+    padding: 1.5rem;
+    border: 2px solid #ddd;
+    transition: all 0.3s ease;
+}
+
+.admin-bracket-match:hover {
+    border-color: #2a5298;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.admin-bracket-match.final-match {
+    background: linear-gradient(135deg, #fff, #f8f9fa);
+    border: 3px solid #2a5298;
+}
+
+.match-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #2a5298;
+    text-align: center;
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+    background: #f8f9fa;
+    border-radius: 8px;
+}
+
+.championship-title {
+    background: linear-gradient(135deg, #2a5298, #1e3c72);
+    color: white;
+    font-size: 1.2rem;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+}
+
+.score-inputs {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.score-inputs input {
+    width: 100px;
+    padding: 0.8rem;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    text-align: center;
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+.score-inputs input:focus {
+    outline: none;
+    border-color: #2a5298;
+    box-shadow: 0 0 10px rgba(42, 82, 152, 0.3);
+}
+
+.score-inputs span {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #666;
+}
+
+.advance-team-btn, .crown-champion-btn {
+    width: 100%;
+    padding: 1rem;
+    background: #28a745;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-bottom: 1rem;
+}
+
+.advance-team-btn:hover, .crown-champion-btn:hover {
+    background: #218838;
+    transform: translateY(-2px);
+}
+
+.crown-champion-btn {
+    background: linear-gradient(135deg, #ffd700, #ffed4a);
+    color: #333;
+    font-size: 1.1rem;
+    border: 2px solid #2a5298;
+}
+
+.crown-champion-btn:hover {
+    background: linear-gradient(135deg, #ffed4a, #ffd700);
+    transform: translateY(-2px) scale(1.02);
+}
+
+.advance-team-btn:disabled, .crown-champion-btn:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.winner-display, .champion-display {
+    text-align: center;
+    font-weight: 700;
+    padding: 0.8rem;
+    background: #e7f3ff;
+    border-radius: 8px;
+    border: 2px solid #2a5298;
+}
+
+.champion-display {
+    background: linear-gradient(135deg, #ffd700, #ffed4a);
+    color: #333;
+    font-size: 1.1rem;
+}
+
+.winner-name, .champion-name {
+    color: #2a5298;
+    font-size: 1.1rem;
+}
+
+.champion-name {
+    color: #1e3c72;
+    font-size: 1.2rem;
+}
+
+.bye-selection {
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.bye-selection label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: #555;
+}
+
+.bye-select {
+    width: 100%;
+    padding: 0.8rem;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    background: white;
+    cursor: pointer;
+}
+
+.bye-select:focus {
+    outline: none;
+    border-color: #2a5298;
+}
+
 /* Matches Management */
 .matches-container {
     margin-bottom: 2rem;

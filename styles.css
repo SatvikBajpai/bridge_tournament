@@ -431,6 +431,219 @@ body {
 }
 
 
+/* Bracket System */
+.bracket-container {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    margin-top: 2rem;
+}
+
+.bracket-round {
+    background: white;
+    border-radius: 15px;
+    padding: 2rem;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+.round-title {
+    color: #2a5298;
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.round-title.championship {
+    color: #ffd700;
+    font-size: 2rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    background: linear-gradient(135deg, #2a5298, #1e3c72);
+    color: white;
+    padding: 1rem;
+    border-radius: 10px;
+    margin: -1rem -1rem 2rem -1rem;
+}
+
+.bracket-matches {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.bracket-match {
+    background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+    border-radius: 12px;
+    padding: 1.5rem;
+    border: 2px solid #e9ecef;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.bracket-match:hover {
+    border-color: #2a5298;
+    transform: translateY(-3px);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+}
+
+.final-match {
+    background: linear-gradient(135deg, #ffd700, #ffed4a);
+    border: 3px solid #2a5298;
+    box-shadow: 0 12px 35px rgba(42, 82, 152, 0.3);
+}
+
+.final-match:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(42, 82, 152, 0.4);
+}
+
+.match-header {
+    background: #2a5298;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+}
+
+.final-header {
+    background: linear-gradient(135deg, #1e3c72, #2a5298);
+    font-size: 1.1rem;
+    padding: 0.8rem 1rem;
+}
+
+.bracket-team {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    margin-bottom: 0.5rem;
+    background: white;
+    border-radius: 8px;
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.bracket-team:last-child {
+    margin-bottom: 0;
+}
+
+.bracket-team.winner {
+    background: linear-gradient(135deg, #28a745, #20c997);
+    color: white;
+    font-weight: 700;
+    border-color: #155724;
+    box-shadow: 0 4px 15px rgba(40, 167, 69, 0.3);
+}
+
+.bracket-team.eliminated {
+    background: #f8d7da;
+    color: #721c24;
+    opacity: 0.7;
+    border-color: #f5c6cb;
+}
+
+.bracket-team.advancing {
+    background: linear-gradient(135deg, #17a2b8, #138496);
+    color: white;
+    border-color: #0c5460;
+}
+
+.bracket-team.bye {
+    background: linear-gradient(135deg, #ffc107, #e0a800);
+    color: #212529;
+    font-weight: 600;
+    border-color: #b45309;
+}
+
+.final-team {
+    background: linear-gradient(135deg, #2a5298, #1e3c72);
+    color: white;
+    font-weight: 700;
+    font-size: 1.1rem;
+    padding: 1.2rem;
+}
+
+.team-name {
+    font-weight: 600;
+    flex: 1;
+}
+
+.team-score {
+    background: rgba(0,0,0,0.1);
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-weight: 700;
+    min-width: 40px;
+    text-align: center;
+}
+
+.final-team .team-score {
+    background: rgba(255,255,255,0.2);
+    font-size: 1.2rem;
+}
+
+.champion-placeholder {
+    text-align: center;
+    padding: 1.5rem;
+    background: linear-gradient(135deg, #ffd700, #ffed4a);
+    color: #333;
+    border-radius: 12px;
+    margin-top: 1rem;
+    font-weight: 700;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.champion-placeholder i {
+    font-size: 2rem;
+    color: #2a5298;
+}
+
+.bracket-legend {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: white;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.legend-color {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    border: 2px solid #333;
+}
+
+.legend-color.advancing {
+    background: linear-gradient(135deg, #17a2b8, #138496);
+}
+
+.legend-color.eliminated {
+    background: #f8d7da;
+}
+
+.legend-color.bye {
+    background: linear-gradient(135deg, #ffc107, #e0a800);
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     .hero-content h1 {

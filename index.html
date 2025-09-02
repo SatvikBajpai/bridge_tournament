@@ -12,21 +12,7 @@
     <header class="hero">
         <div class="hero-content">
             <h1><i class="fas fa-crown"></i> Bridge Tournament</h1>
-            <p class="hero-subtitle">6 Teams • 12 Players</p>
-            <div class="hero-stats">
-                <div class="stat">
-                    <span class="stat-number">15</span>
-                    <span class="stat-label">Total Matches</span>
-                </div>
-                <div class="stat">
-                    <span class="stat-number">5</span>
-                    <span class="stat-label">Rounds</span>
-                </div>
-                <div class="stat">
-                    <span class="stat-number">6</span>
-                    <span class="stat-label">Teams</span>
-                </div>
-            </div>
+            <p class="hero-subtitle">Bridge Tournament Championship</p>
         </div>
     </header>
 
@@ -34,8 +20,8 @@
         <button class="nav-btn active" data-tab="teams">
             <i class="fas fa-users"></i> Teams
         </button>
-        <button class="nav-btn" data-tab="schedule">
-            <i class="fas fa-calendar"></i> Schedule
+        <button class="nav-btn" data-tab="bracket">
+            <i class="fas fa-sitemap"></i> Bracket
         </button>
         <button class="nav-btn" data-tab="standings">
             <i class="fas fa-trophy"></i> Standings
@@ -178,190 +164,118 @@
             </div>
         </section>
 
-        <!-- Schedule Section -->
-        <section id="schedule" class="tab-content">
-            <h2><i class="fas fa-calendar"></i> Tournament Schedule</h2>
-            <p class="schedule-info">Round Robin Format - Each team plays every other team once</p>
+        <!-- Bracket Section -->
+        <section id="bracket" class="tab-content">
+            <h2><i class="fas fa-sitemap"></i> Tournament Bracket</h2>
             
-            <div class="rounds">
-                <div class="round">
-                    <h3>Round 1</h3>
-                    <div class="matches">
-                        <div class="match">
-                            <span class="team">Team Aces</span>
-                            <span class="vs">vs</span>
-                            <span class="team">Team Spades</span>
-                            <div class="match-score">
-                                <span class="score">-</span>
-                                <span class="score-separator">:</span>
-                                <span class="score">-</span>
+            <div class="bracket-container">
+                <!-- Quarter Finals -->
+                <div class="bracket-round">
+                    <h3 class="round-title">Quarter Finals</h3>
+                    <div class="bracket-matches">
+                        <div class="bracket-match" data-round="quarterfinal" data-match="0">
+                            <div class="match-header">QF1</div>
+                            <div class="bracket-team" data-team="Team Aces">
+                                <span class="team-name">Team Aces</span>
+                                <span class="team-score">-</span>
+                            </div>
+                            <div class="bracket-team" data-team="Team Spades">
+                                <span class="team-name">Team Spades</span>
+                                <span class="team-score">-</span>
                             </div>
                         </div>
-                        <div class="match">
-                            <span class="team">Team Hearts</span>
-                            <span class="vs">vs</span>
-                            <span class="team">Team Diamonds</span>
-                            <div class="match-score">
-                                <span class="score">-</span>
-                                <span class="score-separator">:</span>
-                                <span class="score">-</span>
+                        
+                        <div class="bracket-match" data-round="quarterfinal" data-match="1">
+                            <div class="match-header">QF2</div>
+                            <div class="bracket-team" data-team="Team Hearts">
+                                <span class="team-name">Team Hearts</span>
+                                <span class="team-score">-</span>
+                            </div>
+                            <div class="bracket-team" data-team="Team Diamonds">
+                                <span class="team-name">Team Diamonds</span>
+                                <span class="team-score">-</span>
                             </div>
                         </div>
-                        <div class="match">
-                            <span class="team">Team Clubs</span>
-                            <span class="vs">vs</span>
-                            <span class="team">Team Jokers</span>
-                            <div class="match-score">
-                                <span class="score">-</span>
-                                <span class="score-separator">:</span>
-                                <span class="score">-</span>
+                        
+                        <div class="bracket-match" data-round="quarterfinal" data-match="2">
+                            <div class="match-header">QF3</div>
+                            <div class="bracket-team" data-team="Team Clubs">
+                                <span class="team-name">Team Clubs</span>
+                                <span class="team-score">-</span>
                             </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="round">
-                    <h3>Round 2</h3>
-                    <div class="matches">
-                        <div class="match">
-                            <span class="team">Team Aces</span>
-                            <span class="vs">vs</span>
-                            <span class="team">Team Hearts</span>
-                            <div class="match-score">
-                                <span class="score">-</span>
-                                <span class="score-separator">:</span>
-                                <span class="score">-</span>
-                            </div>
-                        </div>
-                        <div class="match">
-                            <span class="team">Team Spades</span>
-                            <span class="vs">vs</span>
-                            <span class="team">Team Clubs</span>
-                            <div class="match-score">
-                                <span class="score">-</span>
-                                <span class="score-separator">:</span>
-                                <span class="score">-</span>
-                            </div>
-                        </div>
-                        <div class="match">
-                            <span class="team">Team Diamonds</span>
-                            <span class="vs">vs</span>
-                            <span class="team">Team Jokers</span>
-                            <div class="match-score">
-                                <span class="score">-</span>
-                                <span class="score-separator">:</span>
-                                <span class="score">-</span>
+                            <div class="bracket-team" data-team="Team Jokers">
+                                <span class="team-name">Team Jokers</span>
+                                <span class="team-score">-</span>
                             </div>
                         </div>
                     </div>
                 </div>
-
-                <div class="round">
-                    <h3>Round 3</h3>
-                    <div class="matches">
-                        <div class="match">
-                            <span class="team">Team Aces</span>
-                            <span class="vs">vs</span>
-                            <span class="team">Team Diamonds</span>
-                            <div class="match-score">
-                                <span class="score">-</span>
-                                <span class="score-separator">:</span>
-                                <span class="score">-</span>
+                
+                <!-- Semi Finals -->
+                <div class="bracket-round">
+                    <h3 class="round-title">Semi Finals</h3>
+                    <div class="bracket-matches">
+                        <div class="bracket-match" data-round="semifinal" data-match="0">
+                            <div class="match-header">SF1</div>
+                            <div class="bracket-team advancing" data-team="">
+                                <span class="team-name">Winner QF1</span>
+                                <span class="team-score">-</span>
+                            </div>
+                            <div class="bracket-team advancing" data-team="">
+                                <span class="team-name">Winner QF2</span>
+                                <span class="team-score">-</span>
                             </div>
                         </div>
-                        <div class="match">
-                            <span class="team">Team Hearts</span>
-                            <span class="vs">vs</span>
-                            <span class="team">Team Clubs</span>
-                            <div class="match-score">
-                                <span class="score">-</span>
-                                <span class="score-separator">:</span>
-                                <span class="score">-</span>
+                        
+                        <div class="bracket-match" data-round="semifinal" data-match="1">
+                            <div class="match-header">SF2</div>
+                            <div class="bracket-team advancing" data-team="">
+                                <span class="team-name">Winner QF3</span>
+                                <span class="team-score">-</span>
                             </div>
-                        </div>
-                        <div class="match">
-                            <span class="team">Team Spades</span>
-                            <span class="vs">vs</span>
-                            <span class="team">Team Jokers</span>
-                            <div class="match-score">
-                                <span class="score">-</span>
-                                <span class="score-separator">:</span>
-                                <span class="score">-</span>
+                            <div class="bracket-team bye" data-team="">
+                                <span class="team-name">Bye (Best Team)</span>
+                                <span class="team-score">-</span>
                             </div>
                         </div>
                     </div>
                 </div>
-
-                <div class="round">
-                    <h3>Round 4</h3>
-                    <div class="matches">
-                        <div class="match">
-                            <span class="team">Team Aces</span>
-                            <span class="vs">vs</span>
-                            <span class="team">Team Clubs</span>
-                            <div class="match-score">
-                                <span class="score">-</span>
-                                <span class="score-separator">:</span>
-                                <span class="score">-</span>
+                
+                <!-- Final -->
+                <div class="bracket-round final-round">
+                    <h3 class="round-title championship">🏆 CHAMPIONSHIP FINAL</h3>
+                    <div class="bracket-matches">
+                        <div class="bracket-match final-match" data-round="final" data-match="0">
+                            <div class="match-header final-header">FINAL</div>
+                            <div class="bracket-team final-team" data-team="">
+                                <span class="team-name">Winner SF1</span>
+                                <span class="team-score">-</span>
                             </div>
-                        </div>
-                        <div class="match">
-                            <span class="team">Team Spades</span>
-                            <span class="vs">vs</span>
-                            <span class="team">Team Diamonds</span>
-                            <div class="match-score">
-                                <span class="score">-</span>
-                                <span class="score-separator">:</span>
-                                <span class="score">-</span>
+                            <div class="bracket-team final-team" data-team="">
+                                <span class="team-name">Winner SF2</span>
+                                <span class="team-score">-</span>
                             </div>
-                        </div>
-                        <div class="match">
-                            <span class="team">Team Hearts</span>
-                            <span class="vs">vs</span>
-                            <span class="team">Team Jokers</span>
-                            <div class="match-score">
-                                <span class="score">-</span>
-                                <span class="score-separator">:</span>
-                                <span class="score">-</span>
+                            <div class="champion-placeholder">
+                                <i class="fas fa-crown"></i>
+                                <span>Tournament Champion</span>
                             </div>
                         </div>
                     </div>
                 </div>
-
-                <div class="round">
-                    <h3>Round 5</h3>
-                    <div class="matches">
-                        <div class="match">
-                            <span class="team">Team Aces</span>
-                            <span class="vs">vs</span>
-                            <span class="team">Team Jokers</span>
-                            <div class="match-score">
-                                <span class="score">-</span>
-                                <span class="score-separator">:</span>
-                                <span class="score">-</span>
-                            </div>
-                        </div>
-                        <div class="match">
-                            <span class="team">Team Spades</span>
-                            <span class="vs">vs</span>
-                            <span class="team">Team Hearts</span>
-                            <div class="match-score">
-                                <span class="score">-</span>
-                                <span class="score-separator">:</span>
-                                <span class="score">-</span>
-                            </div>
-                        </div>
-                        <div class="match">
-                            <span class="team">Team Diamonds</span>
-                            <span class="vs">vs</span>
-                            <span class="team">Team Clubs</span>
-                            <div class="match-score">
-                                <span class="score">-</span>
-                                <span class="score-separator">:</span>
-                                <span class="score">-</span>
-                            </div>
-                        </div>
-                    </div>
+            </div>
+            
+            <div class="bracket-legend">
+                <div class="legend-item">
+                    <span class="legend-color advancing"></span>
+                    <span>Advancing Team</span>
+                </div>
+                <div class="legend-item">
+                    <span class="legend-color eliminated"></span>
+                    <span>Eliminated</span>
+                </div>
+                <div class="legend-item">
+                    <span class="legend-color bye"></span>
+                    <span>Bye (Auto-advance)</span>
                 </div>
             </div>
         </section>
@@ -431,19 +345,20 @@
                 <div class="rule-section">
                     <h3><i class="fas fa-play"></i> Tournament Format</h3>
                     <ul>
-                        <li><strong>Round Robin:</strong> Each team plays every other team exactly once</li>
-                        <li><strong>15 total matches</strong> across 5 rounds</li>
-                        <li><strong>3 matches per round</strong> played simultaneously</li>
+                        <li><strong>Bracket System:</strong> Single elimination tournament with finale</li>
+                        <li><strong>Quarter Finals:</strong> 3 matches between 6 teams (1 team gets bye to semi)</li>
+                        <li><strong>Semi Finals:</strong> 2 matches between 4 teams</li>
+                        <li><strong>Championship Final:</strong> Winner takes all finale match</li>
                     </ul>
                 </div>
 
                 <div class="rule-section">
                     <h3><i class="fas fa-calculator"></i> Scoring System</h3>
                     <ul>
-                        <li><strong>Win:</strong> 2 points</li>
-                        <li><strong>Tie:</strong> 1 point each team</li>
-                        <li><strong>Loss:</strong> 0 points</li>
-                        <li><strong>Tiebreaker:</strong> Head-to-head record, then total points scored</li>
+                        <li><strong>Elimination:</strong> Winner advances, loser is eliminated</li>
+                        <li><strong>No ties:</strong> Each match must have a clear winner</li>
+                        <li><strong>Advancement:</strong> Win to move to next round</li>
+                        <li><strong>Final:</strong> Winner of championship final is tournament champion</li>
                     </ul>
                 </div>
 

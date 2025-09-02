@@ -33,8 +33,8 @@
             <button class="tab-btn active" data-tab="teams">
                 <i class="fas fa-users"></i> Teams & Players
             </button>
-            <button class="tab-btn" data-tab="matches">
-                <i class="fas fa-gamepad"></i> Match Results
+            <button class="tab-btn" data-tab="bracket">
+                <i class="fas fa-sitemap"></i> Bracket Management
             </button>
             <button class="tab-btn" data-tab="standings">
                 <i class="fas fa-trophy"></i> Current Standings
@@ -161,19 +161,112 @@
             </div>
         </section>
 
-        <!-- Match Results Management -->
-        <section id="matches-tab" class="tab-panel">
-            <h2>Match Results</h2>
-            <div id="matches-container" class="matches-container">
-                <!-- Matches will be dynamically generated -->
+        <!-- Bracket Management -->
+        <section id="bracket-tab" class="tab-panel">
+            <h2>Bracket Management</h2>
+            
+            <!-- Quarter Finals -->
+            <div class="admin-bracket-round">
+                <h3>Quarter Finals</h3>
+                <div class="admin-bracket-matches">
+                    <div class="admin-bracket-match" data-round="quarterfinal" data-match="0">
+                        <div class="match-title">QF1: Team Aces vs Team Spades</div>
+                        <div class="score-inputs">
+                            <input type="number" class="score-input" placeholder="Aces Score" data-team="Team Aces">
+                            <span>:</span>
+                            <input type="number" class="score-input" placeholder="Spades Score" data-team="Team Spades">
+                        </div>
+                        <button class="advance-team-btn">Set Winner & Advance</button>
+                        <div class="winner-display">Winner: <span class="winner-name">TBD</span></div>
+                    </div>
+                    
+                    <div class="admin-bracket-match" data-round="quarterfinal" data-match="1">
+                        <div class="match-title">QF2: Team Hearts vs Team Diamonds</div>
+                        <div class="score-inputs">
+                            <input type="number" class="score-input" placeholder="Hearts Score" data-team="Team Hearts">
+                            <span>:</span>
+                            <input type="number" class="score-input" placeholder="Diamonds Score" data-team="Team Diamonds">
+                        </div>
+                        <button class="advance-team-btn">Set Winner & Advance</button>
+                        <div class="winner-display">Winner: <span class="winner-name">TBD</span></div>
+                    </div>
+                    
+                    <div class="admin-bracket-match" data-round="quarterfinal" data-match="2">
+                        <div class="match-title">QF3: Team Clubs vs Team Jokers</div>
+                        <div class="score-inputs">
+                            <input type="number" class="score-input" placeholder="Clubs Score" data-team="Team Clubs">
+                            <span>:</span>
+                            <input type="number" class="score-input" placeholder="Jokers Score" data-team="Team Jokers">
+                        </div>
+                        <button class="advance-team-btn">Set Winner & Advance</button>
+                        <div class="winner-display">Winner: <span class="winner-name">TBD</span></div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Semi Finals -->
+            <div class="admin-bracket-round">
+                <h3>Semi Finals</h3>
+                <div class="admin-bracket-matches">
+                    <div class="admin-bracket-match" data-round="semifinal" data-match="0">
+                        <div class="match-title">SF1: Winner QF1 vs Winner QF2</div>
+                        <div class="score-inputs">
+                            <input type="number" class="score-input" placeholder="Team 1 Score" data-team="">
+                            <span>:</span>
+                            <input type="number" class="score-input" placeholder="Team 2 Score" data-team="">
+                        </div>
+                        <button class="advance-team-btn" disabled>Set Winner & Advance</button>
+                        <div class="winner-display">Winner: <span class="winner-name">TBD</span></div>
+                    </div>
+                    
+                    <div class="admin-bracket-match" data-round="semifinal" data-match="1">
+                        <div class="match-title">SF2: Winner QF3 vs Bye Team</div>
+                        <div class="bye-selection">
+                            <label>Select team for bye to semi-final:</label>
+                            <select id="bye-team-select" class="bye-select">
+                                <option value="">Select team...</option>
+                                <option value="Team Aces">Team Aces</option>
+                                <option value="Team Spades">Team Spades</option>
+                                <option value="Team Hearts">Team Hearts</option>
+                                <option value="Team Diamonds">Team Diamonds</option>
+                                <option value="Team Clubs">Team Clubs</option>
+                                <option value="Team Jokers">Team Jokers</option>
+                            </select>
+                        </div>
+                        <div class="score-inputs">
+                            <input type="number" class="score-input" placeholder="QF3 Winner Score" data-team="">
+                            <span>:</span>
+                            <input type="number" class="score-input" placeholder="Bye Team Score" data-team="">
+                        </div>
+                        <button class="advance-team-btn" disabled>Set Winner & Advance</button>
+                        <div class="winner-display">Winner: <span class="winner-name">TBD</span></div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Championship Final -->
+            <div class="admin-bracket-round final-round">
+                <h3>🏆 Championship Final</h3>
+                <div class="admin-bracket-matches">
+                    <div class="admin-bracket-match final-match" data-round="final" data-match="0">
+                        <div class="match-title championship-title">FINAL: Winner SF1 vs Winner SF2</div>
+                        <div class="score-inputs">
+                            <input type="number" class="score-input" placeholder="Finalist 1 Score" data-team="">
+                            <span>:</span>
+                            <input type="number" class="score-input" placeholder="Finalist 2 Score" data-team="">
+                        </div>
+                        <button class="crown-champion-btn" disabled>👑 Crown Champion</button>
+                        <div class="champion-display">Champion: <span class="champion-name">TBD</span></div>
+                    </div>
+                </div>
             </div>
             
             <div class="bulk-actions">
-                <button id="save-all-matches" class="bulk-btn primary">
-                    <i class="fas fa-save"></i> Save All Match Results
+                <button id="save-bracket" class="bulk-btn primary">
+                    <i class="fas fa-save"></i> Save Bracket Progress
                 </button>
-                <button id="reset-all-matches" class="bulk-btn danger">
-                    <i class="fas fa-undo"></i> Reset All Matches
+                <button id="reset-bracket" class="bulk-btn danger">
+                    <i class="fas fa-undo"></i> Reset Entire Bracket
                 </button>
             </div>
         </section>
