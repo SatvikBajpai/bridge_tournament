@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bridge Tournament</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header class="hero">
+        <div class="hero-content">
+            <h1><i class="fas fa-crown"></i> Bridge Tournament</h1>
+            <p class="hero-subtitle">6 Teams • 12 Players</p>
+            <div class="hero-stats">
+                <div class="stat">
+                    <span class="stat-number">15</span>
+                    <span class="stat-label">Total Matches</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">5</span>
+                    <span class="stat-label">Rounds</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">6</span>
+                    <span class="stat-label">Teams</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <nav class="nav-tabs">
+        <button class="nav-btn active" data-tab="teams">
+            <i class="fas fa-users"></i> Teams
+        </button>
+        <button class="nav-btn" data-tab="schedule">
+            <i class="fas fa-calendar"></i> Schedule
+        </button>
+        <button class="nav-btn" data-tab="standings">
+            <i class="fas fa-trophy"></i> Standings
+        </button>
+        <button class="nav-btn" data-tab="rules">
+            <i class="fas fa-book"></i> Rules
+        </button>
+    </nav>
+
+    <main class="container">
+        <!-- Teams Section -->
+        <section id="teams" class="tab-content active">
+            <h2><i class="fas fa-users"></i> Tournament Teams</h2>
+            <div class="teams-grid">
+                <div class="team-card" data-team="1">
+                    <div class="team-header">
+                        <div class="team-avatar">🃏</div>
+                        <h3>Team Aces</h3>
+                    </div>
+                    <div class="team-players">
+                        <div class="player">
+                            <i class="fas fa-user"></i>
+                            <input type="text" placeholder="Player 1 Name" class="player-input">
+                        </div>
+                        <div class="player">
+                            <i class="fas fa-user"></i>
+                            <input type="text" placeholder="Player 2 Name" class="player-input">
+                        </div>
+                    </div>
+                    <div class="team-stats">
+                        <span class="wins">0 Wins</span>
+                        <span class="points">0 Points</span>
+                    </div>
+                </div>
+
+                <div class="team-card" data-team="2">
+                    <div class="team-header">
+                        <div class="team-avatar">♠️</div>
+                        <h3>Team Spades</h3>
+                    </div>
+                    <div class="team-players">
+                        <div class="player">
+                            <i class="fas fa-user"></i>
+                            <input type="text" placeholder="Player 1 Name" class="player-input">
+                        </div>
+                        <div class="player">
+                            <i class="fas fa-user"></i>
+                            <input type="text" placeholder="Player 2 Name" class="player-input">
+                        </div>
+                    </div>
+                    <div class="team-stats">
+                        <span class="wins">0 Wins</span>
+                        <span class="points">0 Points</span>
+                    </div>
+                </div>
+
+                <div class="team-card" data-team="3">
+                    <div class="team-header">
+                        <div class="team-avatar">♥️</div>
+                        <h3>Team Hearts</h3>
+                    </div>
+                    <div class="team-players">
+                        <div class="player">
+                            <i class="fas fa-user"></i>
+                            <input type="text" placeholder="Player 1 Name" class="player-input">
+                        </div>
+                        <div class="player">
+                            <i class="fas fa-user"></i>
+                            <input type="text" placeholder="Player 2 Name" class="player-input">
+                        </div>
+                    </div>
+                    <div class="team-stats">
+                        <span class="wins">0 Wins</span>
+                        <span class="points">0 Points</span>
+                    </div>
+                </div>
+
+                <div class="team-card" data-team="4">
+                    <div class="team-header">
+                        <div class="team-avatar">♦️</div>
+                        <h3>Team Diamonds</h3>
+                    </div>
+                    <div class="team-players">
+                        <div class="player">
+                            <i class="fas fa-user"></i>
+                            <input type="text" placeholder="Player 1 Name" class="player-input">
+                        </div>
+                        <div class="player">
+                            <i class="fas fa-user"></i>
+                            <input type="text" placeholder="Player 2 Name" class="player-input">
+                        </div>
+                    </div>
+                    <div class="team-stats">
+                        <span class="wins">0 Wins</span>
+                        <span class="points">0 Points</span>
+                    </div>
+                </div>
+
+                <div class="team-card" data-team="5">
+                    <div class="team-header">
+                        <div class="team-avatar">♣️</div>
+                        <h3>Team Clubs</h3>
+                    </div>
+                    <div class="team-players">
+                        <div class="player">
+                            <i class="fas fa-user"></i>
+                            <input type="text" placeholder="Player 1 Name" class="player-input">
+                        </div>
+                        <div class="player">
+                            <i class="fas fa-user"></i>
+                            <input type="text" placeholder="Player 2 Name" class="player-input">
+                        </div>
+                    </div>
+                    <div class="team-stats">
+                        <span class="wins">0 Wins</span>
+                        <span class="points">0 Points</span>
+                    </div>
+                </div>
+
+                <div class="team-card" data-team="6">
+                    <div class="team-header">
+                        <div class="team-avatar">🎭</div>
+                        <h3>Team Jokers</h3>
+                    </div>
+                    <div class="team-players">
+                        <div class="player">
+                            <i class="fas fa-user"></i>
+                            <input type="text" placeholder="Player 1 Name" class="player-input">
+                        </div>
+                        <div class="player">
+                            <i class="fas fa-user"></i>
+                            <input type="text" placeholder="Player 2 Name" class="player-input">
+                        </div>
+                    </div>
+                    <div class="team-stats">
+                        <span class="wins">0 Wins</span>
+                        <span class="points">0 Points</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Schedule Section -->
+        <section id="schedule" class="tab-content">
+            <h2><i class="fas fa-calendar"></i> Tournament Schedule</h2>
+            <p class="schedule-info">Round Robin Format - Each team plays every other team once</p>
+            
+            <div class="rounds">
+                <div class="round">
+                    <h3>Round 1</h3>
+                    <div class="matches">
+                        <div class="match">
+                            <span class="team">Team Aces</span>
+                            <span class="vs">vs</span>
+                            <span class="team">Team Spades</span>
+                            <div class="match-controls">
+                                <input type="number" placeholder="Score" class="score-input">
+                                <input type="number" placeholder="Score" class="score-input">
+                                <button class="update-score">Update</button>
+                            </div>
+                        </div>
+                        <div class="match">
+                            <span class="team">Team Hearts</span>
+                            <span class="vs">vs</span>
+                            <span class="team">Team Diamonds</span>
+                            <div class="match-controls">
+                                <input type="number" placeholder="Score" class="score-input">
+                                <input type="number" placeholder="Score" class="score-input">
+                                <button class="update-score">Update</button>
+                            </div>
+                        </div>
+                        <div class="match">
+                            <span class="team">Team Clubs</span>
+                            <span class="vs">vs</span>
+                            <span class="team">Team Jokers</span>
+                            <div class="match-controls">
+                                <input type="number" placeholder="Score" class="score-input">
+                                <input type="number" placeholder="Score" class="score-input">
+                                <button class="update-score">Update</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="round">
+                    <h3>Round 2</h3>
+                    <div class="matches">
+                        <div class="match">
+                            <span class="team">Team Aces</span>
+                            <span class="vs">vs</span>
+                            <span class="team">Team Hearts</span>
+                            <div class="match-controls">
+                                <input type="number" placeholder="Score" class="score-input">
+                                <input type="number" placeholder="Score" class="score-input">
+                                <button class="update-score">Update</button>
+                            </div>
+                        </div>
+                        <div class="match">
+                            <span class="team">Team Spades</span>
+                            <span class="vs">vs</span>
+                            <span class="team">Team Clubs</span>
+                            <div class="match-controls">
+                                <input type="number" placeholder="Score" class="score-input">
+                                <input type="number" placeholder="Score" class="score-input">
+                                <button class="update-score">Update</button>
+                            </div>
+                        </div>
+                        <div class="match">
+                            <span class="team">Team Diamonds</span>
+                            <span class="vs">vs</span>
+                            <span class="team">Team Jokers</span>
+                            <div class="match-controls">
+                                <input type="number" placeholder="Score" class="score-input">
+                                <input type="number" placeholder="Score" class="score-input">
+                                <button class="update-score">Update</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="round">
+                    <h3>Round 3</h3>
+                    <div class="matches">
+                        <div class="match">
+                            <span class="team">Team Aces</span>
+                            <span class="vs">vs</span>
+                            <span class="team">Team Diamonds</span>
+                            <div class="match-controls">
+                                <input type="number" placeholder="Score" class="score-input">
+                                <input type="number" placeholder="Score" class="score-input">
+                                <button class="update-score">Update</button>
+                            </div>
+                        </div>
+                        <div class="match">
+                            <span class="team">Team Hearts</span>
+                            <span class="vs">vs</span>
+                            <span class="team">Team Clubs</span>
+                            <div class="match-controls">
+                                <input type="number" placeholder="Score" class="score-input">
+                                <input type="number" placeholder="Score" class="score-input">
+                                <button class="update-score">Update</button>
+                            </div>
+                        </div>
+                        <div class="match">
+                            <span class="team">Team Spades</span>
+                            <span class="vs">vs</span>
+                            <span class="team">Team Jokers</span>
+                            <div class="match-controls">
+                                <input type="number" placeholder="Score" class="score-input">
+                                <input type="number" placeholder="Score" class="score-input">
+                                <button class="update-score">Update</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="round">
+                    <h3>Round 4</h3>
+                    <div class="matches">
+                        <div class="match">
+                            <span class="team">Team Aces</span>
+                            <span class="vs">vs</span>
+                            <span class="team">Team Clubs</span>
+                            <div class="match-controls">
+                                <input type="number" placeholder="Score" class="score-input">
+                                <input type="number" placeholder="Score" class="score-input">
+                                <button class="update-score">Update</button>
+                            </div>
+                        </div>
+                        <div class="match">
+                            <span class="team">Team Spades</span>
+                            <span class="vs">vs</span>
+                            <span class="team">Team Diamonds</span>
+                            <div class="match-controls">
+                                <input type="number" placeholder="Score" class="score-input">
+                                <input type="number" placeholder="Score" class="score-input">
+                                <button class="update-score">Update</button>
+                            </div>
+                        </div>
+                        <div class="match">
+                            <span class="team">Team Hearts</span>
+                            <span class="vs">vs</span>
+                            <span class="team">Team Jokers</span>
+                            <div class="match-controls">
+                                <input type="number" placeholder="Score" class="score-input">
+                                <input type="number" placeholder="Score" class="score-input">
+                                <button class="update-score">Update</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="round">
+                    <h3>Round 5</h3>
+                    <div class="matches">
+                        <div class="match">
+                            <span class="team">Team Aces</span>
+                            <span class="vs">vs</span>
+                            <span class="team">Team Jokers</span>
+                            <div class="match-controls">
+                                <input type="number" placeholder="Score" class="score-input">
+                                <input type="number" placeholder="Score" class="score-input">
+                                <button class="update-score">Update</button>
+                            </div>
+                        </div>
+                        <div class="match">
+                            <span class="team">Team Spades</span>
+                            <span class="vs">vs</span>
+                            <span class="team">Team Hearts</span>
+                            <div class="match-controls">
+                                <input type="number" placeholder="Score" class="score-input">
+                                <input type="number" placeholder="Score" class="score-input">
+                                <button class="update-score">Update</button>
+                            </div>
+                        </div>
+                        <div class="match">
+                            <span class="team">Team Diamonds</span>
+                            <span class="vs">vs</span>
+                            <span class="team">Team Clubs</span>
+                            <div class="match-controls">
+                                <input type="number" placeholder="Score" class="score-input">
+                                <input type="number" placeholder="Score" class="score-input">
+                                <button class="update-score">Update</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Standings Section -->
+        <section id="standings" class="tab-content">
+            <h2><i class="fas fa-trophy"></i> Current Standings</h2>
+            <div class="standings-table">
+                <div class="standings-header">
+                    <span>Rank</span>
+                    <span>Team</span>
+                    <span>Wins</span>
+                    <span>Losses</span>
+                    <span>Points</span>
+                </div>
+                <div class="standings-body">
+                    <div class="standings-row" data-team="1">
+                        <span class="rank">1</span>
+                        <span class="team-name">🃏 Team Aces</span>
+                        <span class="wins">0</span>
+                        <span class="losses">0</span>
+                        <span class="points">0</span>
+                    </div>
+                    <div class="standings-row" data-team="2">
+                        <span class="rank">2</span>
+                        <span class="team-name">♠️ Team Spades</span>
+                        <span class="wins">0</span>
+                        <span class="losses">0</span>
+                        <span class="points">0</span>
+                    </div>
+                    <div class="standings-row" data-team="3">
+                        <span class="rank">3</span>
+                        <span class="team-name">♥️ Team Hearts</span>
+                        <span class="wins">0</span>
+                        <span class="losses">0</span>
+                        <span class="points">0</span>
+                    </div>
+                    <div class="standings-row" data-team="4">
+                        <span class="rank">4</span>
+                        <span class="team-name">♦️ Team Diamonds</span>
+                        <span class="wins">0</span>
+                        <span class="losses">0</span>
+                        <span class="points">0</span>
+                    </div>
+                    <div class="standings-row" data-team="5">
+                        <span class="rank">5</span>
+                        <span class="team-name">♣️ Team Clubs</span>
+                        <span class="wins">0</span>
+                        <span class="losses">0</span>
+                        <span class="points">0</span>
+                    </div>
+                    <div class="standings-row" data-team="6">
+                        <span class="rank">6</span>
+                        <span class="team-name">🎭 Team Jokers</span>
+                        <span class="wins">0</span>
+                        <span class="losses">0</span>
+                        <span class="points">0</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Rules Section -->
+        <section id="rules" class="tab-content">
+            <h2><i class="fas fa-book"></i> Tournament Rules</h2>
+            <div class="rules-content">
+                <div class="rule-section">
+                    <h3><i class="fas fa-play"></i> Tournament Format</h3>
+                    <ul>
+                        <li><strong>Round Robin:</strong> Each team plays every other team exactly once</li>
+                        <li><strong>15 total matches</strong> across 5 rounds</li>
+                        <li><strong>3 matches per round</strong> played simultaneously</li>
+                    </ul>
+                </div>
+
+                <div class="rule-section">
+                    <h3><i class="fas fa-calculator"></i> Scoring System</h3>
+                    <ul>
+                        <li><strong>Win:</strong> 2 points</li>
+                        <li><strong>Tie:</strong> 1 point each team</li>
+                        <li><strong>Loss:</strong> 0 points</li>
+                        <li><strong>Tiebreaker:</strong> Head-to-head record, then total points scored</li>
+                    </ul>
+                </div>
+
+                <div class="rule-section">
+                    <h3><i class="fas fa-clock"></i> Match Rules</h3>
+                    <ul>
+                        <li><strong>Time limit:</strong> 90 minutes per match</li>
+                        <li><strong>Boards per match:</strong> 6-8 boards recommended</li>
+                        <li><strong>Scoring:</strong> Total points across all boards</li>
+                    </ul>
+                </div>
+
+                <div class="rule-section">
+                    <h3><i class="fas fa-medal"></i> Awards</h3>
+                    <ul>
+                        <li><strong>1st Place:</strong> Tournament Champions</li>
+                        <li><strong>2nd Place:</strong> Runners-up</li>
+                        <li><strong>3rd Place:</strong> Bronze medalists</li>
+                        <li><strong>Special Awards:</strong> Best Partnership, Most Improved, etc.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
+
+    <script src="script.js"></script>
+</body>
+</html>
