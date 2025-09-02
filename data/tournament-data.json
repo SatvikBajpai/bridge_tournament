@@ -1,0 +1,54 @@
+{
+  "teams": [
+    {
+      "id": 1,
+      "name": "Team Aces",
+      "players": ["", ""],
+      "wins": 0,
+      "losses": 0,
+      "points": 0
+    },
+    {
+      "id": 2,
+      "name": "Team Spades",
+      "players": ["", ""],
+      "wins": 0,
+      "losses": 0,
+      "points": 0
+    },
+    {
+      "id": 3,
+      "name": "Team Hearts",
+      "players": ["", ""],
+      "wins": 0,
+      "losses": 0,
+      "points": 0
+    },
+    {
+      "id": 4,
+      "name": "Team Diamonds",
+      "players": ["", ""],
+      "wins": 0,
+      "losses": 0,
+      "points": 0
+    },
+    {
+      "id": 5,
+      "name": "Team Clubs",
+      "players": ["", ""],
+      "wins": 0,
+      "losses": 0,
+      "points": 0
+    },
+    {
+      "id": 6,
+      "name": "Team Jokers",
+      "players": ["", ""],
+      "wins": 0,
+      "losses": 0,
+      "points": 0
+    }
+  ],
+  "matches": [],
+  "lastUpdated": "2024-01-01T00:00:00.000Z"
+}
