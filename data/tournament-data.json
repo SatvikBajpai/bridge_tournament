@@ -2,48 +2,48 @@
   "teams": [
     {
       "id": 1,
-      "name": "Team Aces",
-      "players": ["A1", "A2"],
+      "name": "Subham & Arnav",
+      "players": ["Subham Jalan", "Arnav Rustagi"],
       "wins": 0,
       "losses": 0,
       "points": 0
     },
     {
       "id": 2,
-      "name": "Team Spades",
-      "players": ["S1", "S2"],
+      "name": "Anshuman & Abhinav",
+      "players": ["Anshuman Sharma", "Abhinav Lodha"],
       "wins": 0,
       "losses": 0,
       "points": 0
     },
     {
       "id": 3,
-      "name": "Team Hearts",
-      "players": ["H1", "H2"],
+      "name": "Parth & Mukundan",
+      "players": ["Parth Ghule", "Mukundan Gurumurthy"],
       "wins": 0,
       "losses": 0,
       "points": 0
     },
     {
       "id": 4,
-      "name": "Team Diamonds",
-      "players": ["D1", "D2"],
+      "name": "Malhar & Utkarsh",
+      "players": ["Malhar Bhise", "Utkarsh Agarwal"],
       "wins": 0,
       "losses": 0,
       "points": 0
     },
     {
       "id": 5,
-      "name": "Team Clubs",
-      "players": ["C1", "C2"],
+      "name": "Arbaaz & Sri",
+      "players": ["Arbaaz Shafiq", "Sri Rangadeep"],
       "wins": 0,
       "losses": 0,
       "points": 0
     },
     {
       "id": 6,
-      "name": "Team Jokers",
-      "players": ["J1", "J2"],
+      "name": "Arya & Dhirain",
+      "players": ["Arya Lamba", "Dhirain Vij"],
       "wins": 0,
       "losses": 0,
       "points": 0
