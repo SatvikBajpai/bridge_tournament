@@ -477,6 +477,9 @@ body {
     box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
     text-transform: uppercase;
     letter-spacing: 0.5px;
+    word-break: break-word;
+    hyphens: auto;
+    overflow-wrap: break-word;
 }
 
 @keyframes pulse-warning {
@@ -786,6 +789,47 @@ body {
         font-size: 0.9rem;
         line-height: 1.5;
     }
+    
+    .rule-section li.critical-rule {
+        padding: 0.8rem 1rem;
+        margin: 0.3rem 0;
+        font-size: 0.85rem;
+        line-height: 1.4;
+        letter-spacing: 0.3px;
+        word-break: break-word;
+        hyphens: auto;
+    }
+}
+
+/* Tablet and medium mobile devices */
+@media (max-width: 768px) and (min-width: 481px) {
+    .rules-content {
+        padding: 1.5rem;
+    }
+    
+    .rule-section {
+        margin-bottom: 2rem;
+    }
+    
+    .rule-section h3 {
+        font-size: 1.2rem;
+        margin-bottom: 1rem;
+    }
+    
+    .rule-section li {
+        padding: 0.5rem 0;
+        padding-left: 1.2rem;
+        font-size: 0.95rem;
+        line-height: 1.6;
+    }
+    
+    .rule-section li.critical-rule {
+        padding: 0.9rem 1.2rem;
+        margin: 0.4rem 0;
+        font-size: 0.9rem;
+        line-height: 1.4;
+        letter-spacing: 0.4px;
+    }
 }
 
 @media (max-width: 320px) {
@@ -801,6 +845,31 @@ body {
     .round,
     .rules-content {
         padding: 0.8rem;
+    }
+    
+    .rule-section {
+        margin-bottom: 1rem;
+    }
+    
+    .rule-section h3 {
+        font-size: 1rem;
+        margin-bottom: 0.6rem;
+    }
+    
+    .rule-section li {
+        padding: 0.3rem 0;
+        padding-left: 0.8rem;
+        font-size: 0.8rem;
+        line-height: 1.4;
+    }
+    
+    .rule-section li.critical-rule {
+        padding: 0.6rem 0.8rem;
+        margin: 0.3rem 0;
+        font-size: 0.75rem;
+        line-height: 1.3;
+        letter-spacing: 0.2px;
+        border-left: 3px solid #d63031;
     }
     
     .nav-btn {
