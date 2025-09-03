@@ -94,8 +94,16 @@ function updatePlayerNames() {
             
             // Update team logo/avatar
             const teamAvatar = teamCard.querySelector('.team-avatar');
-            if (teamAvatar && team.logo) {
-                teamAvatar.innerHTML = `<img src="${team.logo}" alt="${team.name} logo" style="width: 40px; height: 40px; border-radius: 50%; object-fit: cover;">`;
+            if (teamAvatar) {
+                if (team.logo) {
+                    // Team has a custom logo
+                    teamAvatar.classList.add('has-logo');
+                    teamAvatar.innerHTML = `<img src="${team.logo}" alt="${team.name} logo" onerror="this.parentElement.classList.remove('has-logo'); this.parentElement.innerHTML='';">`;
+                } else {
+                    // No logo, keep container empty
+                    teamAvatar.classList.remove('has-logo');
+                    teamAvatar.innerHTML = '';
+                }
             }
             
             // Update player names
