@@ -19,6 +19,7 @@ class GitHubDatabase {
         }
 
         try {
+            // First try GitHub API
             const response = await fetch(
                 `${this.apiBase}/repos/${this.owner}/${this.repo}/contents/${this.dataFile}`,
                 {
@@ -42,14 +43,47 @@ class GitHubDatabase {
             
             return data;
         } catch (error) {
-            console.error('Error fetching data from GitHub:', error);
-            // Fallback to local storage if GitHub fails
+            console.error('Error fetching data from GitHub API:', error);
+            
+            // Try direct file access as fallback
+            try {
+                const directResponse = await fetch(`./data/tournament-data.json?${Date.now()}`);
+                if (directResponse.ok) {
+                    const data = await directResponse.json();
+                    this.cachedData = data;
+                    this.lastFetch = Date.now();
+                    return data;
+                }
+            } catch (directError) {
+                console.error('Error fetching data directly:', directError);
+            }
+            
+            // Fallback to local storage if both GitHub and direct access fail
             const localData = localStorage.getItem('bridgeTournamentData');
             if (localData) {
+                console.log('Using cached data from localStorage');
                 return JSON.parse(localData);
             }
-            throw error;
+            
+            // Ultimate fallback - return default data structure
+            console.log('Using default tournament data');
+            return this.getDefaultData();
         }
+    }
+
+    getDefaultData() {
+        return {
+            teams: [
+                { id: 1, name: 'Subham & Arnav', players: ['Subham Jalan', 'Arnav Rustagi'], wins: 0, losses: 0, points: 0 },
+                { id: 2, name: 'epicbaarish', players: ['Anshuman Sharma', 'Abhinav Lodha'], logo: 'team_logos/abhinav.jpeg', wins: 0, losses: 0, points: 0 },
+                { id: 3, name: 'Parth & Mukundan', players: ['Parth Ghule', 'Mukundan Gurumurthy'], wins: 0, losses: 0, points: 0 },
+                { id: 4, name: 'do-NO-ld TRUMP', players: ['Malhar Bhise', 'Utkarsh Agarwal'], logo: 'team_logos/malhar.jpeg', wins: 0, losses: 0, points: 0 },
+                { id: 5, name: 'Arbaaz & Sri', players: ['Arbaaz Shafiq', 'Sri Rangadeep'], wins: 0, losses: 0, points: 0 },
+                { id: 6, name: 'Arya & Dhirain', players: ['Arya Lamba', 'Dhirain Vij'], wins: 0, losses: 0, points: 0 }
+            ],
+            matches: [],
+            lastUpdated: new Date().toISOString()
+        };
     }
 
     async saveData(data) {

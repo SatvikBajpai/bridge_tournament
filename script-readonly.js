@@ -49,6 +49,8 @@ async function loadTournamentData(silent = false) {
         if (data.lastUpdated && data.lastUpdated !== lastUpdateTime) {
             tournamentData = data;
             lastUpdateTime = data.lastUpdated;
+            // Save to localStorage for future fallback
+            localStorage.setItem('bridgeTournamentData', JSON.stringify(data));
             updateAllDisplays();
             
             if (silent && lastUpdateTime) {
@@ -58,13 +60,22 @@ async function loadTournamentData(silent = false) {
             // First load
             tournamentData = data;
             lastUpdateTime = data.lastUpdated;
+            // Save to localStorage for future fallback
+            localStorage.setItem('bridgeTournamentData', JSON.stringify(data));
             updateAllDisplays();
         }
         
     } catch (error) {
         console.error('Failed to load tournament data:', error);
         if (!silent) {
-            showErrorMessage('Failed to load tournament data. Displaying cached data.');
+            // Don't show error message if we have cached data
+            if (!tournamentData || !tournamentData.teams || tournamentData.teams.length === 0) {
+                showErrorMessage('Loading tournament data...');
+            }
+        }
+        // Still update displays with whatever data we have
+        if (tournamentData && tournamentData.teams) {
+            updateAllDisplays();
         }
     } finally {
         if (!silent) {
