@@ -10,8 +10,9 @@
     },
     {
       "id": 2,
-      "name": "Anshuman & Abhinav",
+      "name": "epicbaarish",
       "players": ["Anshuman Sharma", "Abhinav Lodha"],
+      "logo": "team_logos/abhinav.jpeg",
       "wins": 0,
       "losses": 0,
       "points": 0
@@ -26,8 +27,9 @@
     },
     {
       "id": 4,
-      "name": "Malhar & Utkarsh",
+      "name": "do-NO-ld TRUMP",
       "players": ["Malhar Bhise", "Utkarsh Agarwal"],
+      "logo": "team_logos/malhar.jpeg",
       "wins": 0,
       "losses": 0,
       "points": 0

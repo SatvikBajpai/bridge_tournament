@@ -81,11 +81,24 @@ function updateAllDisplays() {
     updateStandings();
 }
 
-// Update player names
+// Update player names and team info
 function updatePlayerNames() {
     tournamentData.teams.forEach(team => {
         const teamCard = document.querySelector(`[data-team="${team.id}"]`);
         if (teamCard) {
+            // Update team name
+            const teamNameElement = teamCard.querySelector('h3');
+            if (teamNameElement) {
+                teamNameElement.textContent = team.name;
+            }
+            
+            // Update team logo/avatar
+            const teamAvatar = teamCard.querySelector('.team-avatar');
+            if (teamAvatar && team.logo) {
+                teamAvatar.innerHTML = `<img src="${team.logo}" alt="${team.name} logo" style="width: 40px; height: 40px; border-radius: 50%; object-fit: cover;">`;
+            }
+            
+            // Update player names
             const playerNames = teamCard.querySelectorAll('.player-name');
             playerNames[0].textContent = team.players[0] || 'Player 1';
             playerNames[1].textContent = team.players[1] || 'Player 2';
